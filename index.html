@@ -869,49 +869,145 @@ footer{
 
     <!-- Bottle SVG -->
     <div class="bottle-center reveal reveal-2">
-      <svg viewBox="0 0 160 400" xmlns="http://www.w3.org/2000/svg" style="width:200px;max-width:100%;filter:drop-shadow(0 0 40px rgba(200,168,75,0.12))" aria-label="Botella Ocean Bridge">
-        <!-- Crown cap -->
-        <ellipse cx="80" cy="32" rx="16" ry="5" fill="#B8943C"/>
-        <rect x="64" y="28" width="32" height="10" rx="4" fill="#C8A84B"/>
-        <rect x="62" y="36" width="36" height="4" rx="1" fill="#8B6B1E"/>
-        <!-- Foil wrap -->
-        <rect x="66" y="39" width="28" height="22" rx="1" fill="#C8A84B" opacity=".85"/>
-        <rect x="68" y="40" width="24" height="20" rx="1" fill="none" stroke="#8B6B1E" stroke-width=".6"/>
-        <!-- Neck -->
-        <rect x="70" y="60" width="20" height="42" fill="#0C1B2D" stroke="#C8A84B" stroke-width=".6"/>
-        <!-- Shoulder curve -->
-        <path d="M68,100 Q54,108 50,128 L50,298 Q50,320 80,320 Q110,320 110,298 L110,128 Q106,108 92,100 L92,102 L68,102 Z"
-          fill="#0C1B2D" stroke="#C8A84B" stroke-width=".7"/>
-        <!-- Body fill subtle gradient illusion lines -->
-        <line x1="57" y1="130" x2="57" y2="295" stroke="#C8A84B" stroke-width=".3" opacity=".15"/>
-        <line x1="103" y1="130" x2="103" y2="295" stroke="#C8A84B" stroke-width=".3" opacity=".15"/>
-        <!-- Label -->
-        <rect x="53" y="148" width="54" height="118" rx="2" fill="#EDE6D8"/>
-        <!-- Gold border on label -->
-        <rect x="55" y="150" width="50" height="114" rx="1" fill="none" stroke="#C8A84B" stroke-width=".7"/>
-        <!-- Label: brand name -->
-        <text x="80" y="172" text-anchor="middle" font-family="Cinzel Decorative,serif" font-size="7.5" font-weight="700" fill="#07101C">OCEAN</text>
-        <text x="80" y="183" text-anchor="middle" font-family="Cinzel Decorative,serif" font-size="7.5" font-weight="700" fill="#07101C">BRIDGE</text>
-        <!-- Mini compass on label -->
-        <g transform="translate(80,207)">
-          <circle r="15" fill="none" stroke="#C8A84B" stroke-width=".7"/>
-          <polygon points="0,-12 1.8,0 0,3 -1.8,0" fill="#07101C" opacity=".8"/>
-          <polygon points="0,12 1.8,0 0,-3 -1.8,0" fill="#8B6B1E" opacity=".7"/>
-          <polygon points="-12,0 0,1.8 3,0 0,-1.8" fill="#C8A84B" opacity=".8"/>
-          <polygon points="12,0 0,1.8 -3,0 0,-1.8" fill="#C8A84B" opacity=".8"/>
-          <circle r="2.5" fill="#0C1B2D" stroke="#C8A84B" stroke-width=".5"/>
+      <svg viewBox="0 0 160 440" xmlns="http://www.w3.org/2000/svg"
+        style="width:210px;max-width:100%;filter:drop-shadow(0 0 50px rgba(200,168,75,0.16)) drop-shadow(0 24px 44px rgba(5,9,15,0.65));"
+        aria-label="Botella Ocean Bridge Trans-Atlantic Blonde Ale">
+        <defs>
+          <!-- Amber brown glass gradient (x=50 to x=110) -->
+          <linearGradient id="bglA" x1="50" x2="110" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#170803"/>
+            <stop offset="12%"  stop-color="#3E1C08"/>
+            <stop offset="40%"  stop-color="#7B3D16"/>
+            <stop offset="62%"  stop-color="#5A2A0D"/>
+            <stop offset="84%"  stop-color="#3C1809"/>
+            <stop offset="100%" stop-color="#170803"/>
+          </linearGradient>
+          <!-- Neck glass (x=69 to x=91) -->
+          <linearGradient id="nglA" x1="69" x2="91" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#110602"/>
+            <stop offset="28%"  stop-color="#3A1907"/>
+            <stop offset="55%"  stop-color="#5E2C10"/>
+            <stop offset="82%"  stop-color="#3A1907"/>
+            <stop offset="100%" stop-color="#110602"/>
+          </linearGradient>
+          <!-- Navy crown cap (x=63 to x=97) -->
+          <linearGradient id="cglA" x1="63" x2="97" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#04090F"/>
+            <stop offset="42%"  stop-color="#0C1D33"/>
+            <stop offset="100%" stop-color="#04090F"/>
+          </linearGradient>
+          <!-- Label background (x=53 to x=107) -->
+          <linearGradient id="lblA" x1="53" x2="107" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#06111F"/>
+            <stop offset="45%"  stop-color="#0D2040"/>
+            <stop offset="100%" stop-color="#06111F"/>
+          </linearGradient>
+          <!-- Glass highlight left of center -->
+          <linearGradient id="hglA" x1="50" x2="110" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="rgba(255,195,110,0)"/>
+            <stop offset="20%"  stop-color="rgba(255,195,110,0.13)"/>
+            <stop offset="36%"  stop-color="rgba(255,195,110,0)"/>
+            <stop offset="100%" stop-color="rgba(255,195,110,0)"/>
+          </linearGradient>
+        </defs>
+
+        <!-- ══ CROWN CAP ══ -->
+        <!-- Crimped skirt base (slightly wider than cap) -->
+        <ellipse cx="80" cy="52" rx="18" ry="5.5" fill="#0A1526" stroke="#C8A84B" stroke-width=".55" opacity=".75"/>
+        <!-- Cap body -->
+        <rect x="63" y="26" width="34" height="26" rx="2" fill="url(#cglA)"/>
+        <!-- Cap dome -->
+        <path d="M63,30 Q63,16 80,16 Q97,16 97,30 Z" fill="#060D18"/>
+        <!-- Subtle ridge lines on cap -->
+        <line x1="65" y1="36" x2="95" y2="36" stroke="#C8A84B" stroke-width=".3" opacity=".3"/>
+        <line x1="65" y1="43" x2="95" y2="43" stroke="#C8A84B" stroke-width=".25" opacity=".22"/>
+        <!-- Gold accent at base of cap -->
+        <line x1="63" y1="50" x2="97" y2="50" stroke="#C8A84B" stroke-width=".8" opacity=".65"/>
+        <!-- Cap dome highlight -->
+        <path d="M67,22 Q72,17 77,20 Q73,24 67,22 Z" fill="rgba(255,255,255,0.07)"/>
+
+        <!-- ══ NECK ══ -->
+        <rect x="69" y="52" width="22" height="66" fill="url(#nglA)"/>
+        <!-- Neck highlight -->
+        <rect x="69" y="52" width="5" height="66" fill="rgba(255,200,120,0.07)"/>
+        <!-- Neck bottom ring -->
+        <line x1="69" y1="116" x2="91" y2="116" stroke="#C8A84B" stroke-width=".35" opacity=".28"/>
+
+        <!-- ══ SHOULDER ══ -->
+        <path d="M69,116 Q56,140 50,162 L110,162 Q104,140 91,116 Z" fill="url(#bglA)"/>
+
+        <!-- ══ BODY ══ -->
+        <rect x="50" y="160" width="60" height="196" fill="url(#bglA)"/>
+        <!-- Glass highlight overlay on body -->
+        <rect x="50" y="160" width="60" height="196" fill="url(#hglA)"/>
+        <!-- Subtle right-edge reflected light -->
+        <rect x="104" y="162" width="6" height="192" fill="rgba(255,180,80,0.04)"/>
+
+        <!-- ══ BASE ══ -->
+        <path d="M50,356 L50,368 Q50,384 80,386 Q110,384 110,368 L110,356 Z" fill="url(#bglA)"/>
+        <!-- Bottom disc of bottle -->
+        <ellipse cx="80" cy="384" rx="30" ry="5.5" fill="#110601"/>
+        <!-- Cast shadow on surface -->
+        <ellipse cx="80" cy="391" rx="26" ry="4" fill="rgba(5,9,15,0.42)"/>
+
+        <!-- ══ LABEL ══ -->
+        <rect x="53" y="196" width="54" height="138" rx="2" fill="url(#lblA)"/>
+        <!-- Outer gold border -->
+        <rect x="53" y="196" width="54" height="138" rx="2" fill="none" stroke="#C8A84B" stroke-width=".8"/>
+        <!-- Inner thin gold border -->
+        <rect x="56" y="199" width="48" height="132" rx="1" fill="none" stroke="#C8A84B" stroke-width=".3" opacity=".4"/>
+
+        <!-- OCEAN / BRIDGE title -->
+        <text x="80" y="220" text-anchor="middle" font-family="Cinzel Decorative,serif" font-size="8.5" font-weight="700" fill="#EDE6D8" letter-spacing=".5">OCEAN</text>
+        <text x="80" y="233" text-anchor="middle" font-family="Cinzel Decorative,serif" font-size="8.5" font-weight="700" fill="#EDE6D8" letter-spacing=".5">BRIDGE</text>
+        <!-- Gold rule below title -->
+        <line x1="58" y1="238" x2="102" y2="238" stroke="#C8A84B" stroke-width=".5" opacity=".7"/>
+
+        <!-- Compass rose on label -->
+        <g transform="translate(80,262)">
+          <circle r="19" fill="none" stroke="#C8A84B" stroke-width=".8" opacity=".6"/>
+          <circle r="14" fill="none" stroke="#C8A84B" stroke-width=".3" opacity=".3"/>
+          <!-- Cardinal arms (N cream, S dark, E/W gold) -->
+          <polygon points="0,-14 1.6,0 0,2.5 -1.6,0" fill="#EDE6D8" opacity=".9"/>
+          <polygon points="0,-14 1.6,0 0,2.5 -1.6,0" fill="#8B6B1E" opacity=".8"  transform="rotate(180)"/>
+          <polygon points="0,-14 1.6,0 0,2.5 -1.6,0" fill="#C8A84B" opacity=".85" transform="rotate(90)"/>
+          <polygon points="0,-14 1.6,0 0,2.5 -1.6,0" fill="#C8A84B" opacity=".85" transform="rotate(270)"/>
+          <!-- Intercardinal arms (symmetric) -->
+          <polygon points="0,-10 1,0 0,1.8 -1,0" fill="#9A7A2E" opacity=".6" transform="rotate(45)"/>
+          <polygon points="0,-10 1,0 0,1.8 -1,0" fill="#9A7A2E" opacity=".6" transform="rotate(135)"/>
+          <polygon points="0,-10 1,0 0,1.8 -1,0" fill="#9A7A2E" opacity=".6" transform="rotate(225)"/>
+          <polygon points="0,-10 1,0 0,1.8 -1,0" fill="#9A7A2E" opacity=".6" transform="rotate(315)"/>
+          <!-- Center jewel -->
+          <circle r="3.5" fill="#07101C" stroke="#C8A84B" stroke-width=".7"/>
+          <circle r="1.5" fill="#C8A84B"/>
         </g>
-        <!-- Label: style + volume -->
-        <text x="80" y="230" text-anchor="middle" font-family="Cinzel,serif" font-size="5.5" fill="#8B6B1E">BLONDE ALE</text>
-        <line x1="58" y1="234" x2="102" y2="234" stroke="#C8A84B" stroke-width=".4" opacity=".6"/>
-        <text x="80" y="244" text-anchor="middle" font-family="EB Garamond,serif" font-size="6.5" font-style="italic" fill="#07101C">Trans-Atlantic</text>
-        <text x="80" y="253" text-anchor="middle" font-family="Cinzel,serif" font-size="5" fill="#8B6B1E">ABV 3.0%  ·  IBU 24  ·  330mL</text>
-        <line x1="58" y1="257" x2="102" y2="257" stroke="#C8A84B" stroke-width=".4" opacity=".6"/>
-        <text x="80" y="268" text-anchor="middle" font-family="Cinzel,serif" font-size="4.5" fill="#8B6B1E">HECHO EN COLOMBIA</text>
-        <!-- Base -->
-        <ellipse cx="80" cy="314" rx="28" ry="5" fill="#C8A84B" opacity=".12"/>
-        <!-- Reflection/light on bottle -->
-        <path d="M72,125 Q70,200 71,290" stroke="#C8A84B" stroke-width=".4" opacity=".1" fill="none"/>
+
+        <!-- Gold rule below compass -->
+        <line x1="58" y1="286" x2="102" y2="286" stroke="#C8A84B" stroke-width=".5" opacity=".6"/>
+
+        <!-- Style text -->
+        <text x="80" y="296" text-anchor="middle" font-family="Cinzel,serif" font-size="5.2" fill="#C8A84B" letter-spacing="1.2">BLONDE ALE</text>
+        <text x="80" y="307" text-anchor="middle" font-family="EB Garamond,serif" font-size="6.5" font-style="italic" fill="#EDE6D8" opacity=".82">Trans-Atlantic</text>
+        <text x="80" y="317" text-anchor="middle" font-family="EB Garamond,serif" font-size="5.8" font-style="italic" fill="#C8A84B" opacity=".6">El puente entre dos mares.</text>
+        <!-- Volume -->
+        <line x1="58" y1="321" x2="102" y2="321" stroke="#C8A84B" stroke-width=".4" opacity=".4"/>
+        <text x="80" y="328" text-anchor="middle" font-family="Cinzel,serif" font-size="4.5" fill="#9A7A2E" letter-spacing=".8">ABV 3.0%  ·  330 mL</text>
+        <!-- Disclaimer strip -->
+        <rect x="53" y="329" width="54" height="5" rx="0" fill="#050D18"/>
+        <text x="80" y="333" text-anchor="middle" font-family="Arial,sans-serif" font-size="2.7" fill="#EDE6D8" opacity=".38" letter-spacing=".12">EL EXCESO DE ALCOHOL ES PERJUDICIAL PARA LA SALUD</text>
+
+        <!-- ══ CONDENSATION ══ -->
+        <circle cx="54" cy="224" r="2"   fill="rgba(180,215,255,0.22)"/>
+        <circle cx="55" cy="236" r="1.4" fill="rgba(180,215,255,0.16)"/>
+        <circle cx="106" cy="212" r="1.8" fill="rgba(180,215,255,0.18)"/>
+        <circle cx="105" cy="250" r="1.5" fill="rgba(180,215,255,0.14)"/>
+        <circle cx="54"  cy="292" r="1.8" fill="rgba(180,215,255,0.2)"/>
+        <circle cx="106" cy="304" r="1.4" fill="rgba(180,215,255,0.15)"/>
+        <circle cx="55"  cy="338" r="1.2" fill="rgba(180,215,255,0.14)"/>
+        <!-- Condensation streaks -->
+        <path d="M54,240 Q53,247 54,255"  stroke="rgba(180,215,255,0.12)" stroke-width="1.2" fill="none"/>
+        <path d="M106,258 Q107,265 106,272" stroke="rgba(180,215,255,0.1)"  stroke-width="1"   fill="none"/>
+        <path d="M54,298 Q53,305 54,312"  stroke="rgba(180,215,255,0.1)"  stroke-width="1"   fill="none"/>
       </svg>
     </div>
 
