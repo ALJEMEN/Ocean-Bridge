@@ -431,6 +431,182 @@ footer{
   from{opacity:0;}
   to{opacity:1;}
 }
+
+/* ════════════════════════════════════════════
+   HAMBURGER BUTTON — base (hidden on desktop)
+════════════════════════════════════════════ */
+.nav-ham{
+  display:none;flex-direction:column;gap:5px;
+  background:none;border:none;cursor:pointer;
+  padding:6px;
+}
+.nav-ham span{
+  display:block;width:22px;height:1.5px;
+  background:var(--gold);
+  transition:transform .3s ease,opacity .3s ease;
+  transform-origin:center;
+}
+
+/* ════════════════════════════════════════════
+   TABLET  ≤ 1024px
+════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .wrap{padding:0 2.2rem;}
+  .story-grid{gap:3.5rem;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .stat:nth-child(2){border-right:none;}
+  .stat:nth-child(3){border-top:1px solid var(--border);}
+  .stat:nth-child(4){border-top:1px solid var(--border);}
+  .bottle-inner{padding:0 2.2rem;gap:2rem;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2.5rem;}
+}
+
+/* ════════════════════════════════════════════
+   MOBILE  ≤ 768px
+════════════════════════════════════════════ */
+@media(max-width:768px){
+  body{font-size:16px;}
+
+  /* ── Nav ── */
+  nav{padding:1rem 1.4rem;}
+  .nav-cta{display:none;}
+  .nav-ham{
+    display:flex;
+    position:fixed;top:1rem;right:1.4rem;
+    z-index:500;
+  }
+  .nav-ham.active span:nth-child(1){transform:rotate(45deg) translate(4px,4.5px);}
+  .nav-ham.active span:nth-child(2){opacity:0;}
+  .nav-ham.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4.5px);}
+  .nav-links{
+    position:fixed;inset:0;
+    flex-direction:column;
+    align-items:center;justify-content:center;
+    gap:2.8rem;z-index:400;
+    background:rgba(5,9,15,.97);
+    transform:translateX(100%);
+    transition:transform .4s cubic-bezier(.4,0,.2,1);
+  }
+  .nav-links.open{transform:translateX(0);}
+  .nav-links a{font-size:.9rem;letter-spacing:.22em;}
+
+  /* ── Hero ── */
+  .hero-compass-wrap{width:min(94vw,94vh);}
+  .hero-content{padding:1rem 1.2rem;}
+  .hero-eyebrow{font-size:.48rem;letter-spacing:.3em;margin-bottom:1.2rem;}
+  .hero-title{font-size:clamp(2.8rem,14vw,5rem);line-height:.91;}
+  .hero-divider{margin:1.4rem 0;}
+  .hero-tagline{font-size:.95rem;}
+  .hero-sub{font-size:.5rem;letter-spacing:.2em;margin-bottom:2rem;}
+  .hero-btn{padding:.85rem 1.8rem;font-size:.54rem;letter-spacing:.25em;}
+  .hero-coords{display:none;}
+
+  /* ── Sections ── */
+  .wrap{padding:0 1.4rem;}
+  .s-story{padding:5rem 0;}
+  .s-perfil{padding:5rem 0;}
+  .s-bottle{padding:4.5rem 0;}
+  .s-galeria{padding:5rem 0;}
+  .sec-title{font-size:clamp(1.5rem,7vw,2.4rem);}
+
+  /* ── Story ── */
+  .story-grid{
+    grid-template-columns:1fr;
+    gap:2.5rem;
+  }
+  .story-visual{order:2;padding:0;}
+  .story-map{max-width:100%;}
+  .story-body p:first-child::first-letter{font-size:2.8rem;line-height:.82;}
+  .story-body blockquote{margin:1.2rem 0;font-size:1rem;}
+
+  /* ── Stats ── */
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .stat{padding:2.2rem 1.2rem;}
+  .stat:nth-child(2){border-right:none;}
+  .stat:nth-child(3){
+    border-top:1px solid var(--border);
+    border-right:1px solid var(--border);
+  }
+  .stat:nth-child(4){
+    border-top:1px solid var(--border);
+    border-right:none;
+  }
+  .stat-n{font-size:2.4rem;}
+  .perfil-head{margin-bottom:3rem;}
+  .ingr-block{padding:2rem 1.4rem;max-width:100%;}
+
+  /* ── Bottle ── */
+  .bottle-inner{
+    grid-template-columns:1fr;
+    padding:0 1.4rem;gap:2rem;
+  }
+  .bottle-center{order:-1;}
+  .bottle-center svg{width:140px !important;}
+  .bottle-left,.bottle-right{padding:0;}
+  .bottle-left .sec-label,
+  .bottle-left .sec-title,
+  .bottle-left .bottle-copy{text-align:center;}
+  .bottle-left .gold-line{margin:1.4rem auto;}
+  .bottle-right .sec-label,
+  .bottle-right .sec-title,
+  .bottle-right .bottle-copy{text-align:center;}
+  .bottle-right .gold-line{margin:1.4rem auto;}
+
+  /* ── La Deriva ── */
+  .deriva-inner{padding:6rem 1.5rem;}
+  .deriva-q{font-size:1.15rem;}
+  .deriva-body p{font-size:1rem;}
+  .deriva-sig{font-size:.5rem;letter-spacing:.22em;}
+
+  /* ── Galería ── */
+  .galeria-head{padding:0 1.4rem;margin-bottom:3rem;}
+  .galeria-grid{
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:auto;
+  }
+  .g-item.tall{
+    grid-column:1 / -1;
+    grid-row:span 1;
+    aspect-ratio:16 / 7;
+  }
+  .g-item.tall svg{width:100%;height:100%;max-height:none;}
+  .g-label{
+    opacity:1;
+    font-size:.46rem;letter-spacing:.18em;
+  }
+
+  /* ── Footer ── */
+  footer{padding:4rem 1.4rem 2.5rem;}
+  .footer-top{
+    grid-template-columns:1fr;gap:2.5rem;
+  }
+  .f-brand{text-align:center;}
+  .f-brand p{max-width:100%;}
+  .footer-bottom{
+    flex-direction:column;
+    gap:.8rem;text-align:center;
+  }
+  .f-warning{font-size:.43rem;letter-spacing:.1em;}
+  .f-legal{font-size:.72rem;}
+}
+
+/* ════════════════════════════════════════════
+   SMALL PHONE  ≤ 400px
+════════════════════════════════════════════ */
+@media(max-width:400px){
+  .hero-title{font-size:clamp(2.4rem,16vw,3.2rem);}
+  .hero-eyebrow{font-size:.44rem;letter-spacing:.18em;}
+  .hero-sub{font-size:.46rem;letter-spacing:.14em;}
+  .stats-grid{grid-template-columns:1fr;}
+  .stat{border-right:none !important;border-top:none !important;}
+  .stat + .stat{border-top:1px solid var(--border) !important;}
+  .galeria-grid{grid-template-columns:1fr;}
+  .g-item.tall{aspect-ratio:4 / 3;}
+  .g-item{aspect-ratio:4 / 3;}
+  .wrap{padding:0 1rem;}
+  nav{padding:.9rem 1rem;}
+  .nav-ham{top:.85rem;right:1rem;}
+}
 </style>
 </head>
 <body>
@@ -445,6 +621,9 @@ footer{
     <li><a href="#galeria">Galería</a></li>
   </ul>
   <a href="#" class="nav-cta">Encontrar</a>
+  <button class="nav-ham" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- ═══ HERO ═══ -->
@@ -793,16 +972,16 @@ footer{
           <circle r="155" fill="none" stroke="#C8A84B" stroke-width=".5" stroke-dasharray="4 8" opacity=".6"/>
           <circle r="145" fill="none" stroke="#C8A84B" stroke-width=".3" opacity=".4"/>
           <circle r="100" fill="none" stroke="#C8A84B" stroke-width=".3" opacity=".3"/>
-          <!-- Compass arms -->
-          <polygon points="0,-140 10,0 0,15 -10,0" fill="#EDE6D8" opacity=".9"/>
-          <polygon points="0,140 10,0 0,-15 -10,0" fill="#8B6B1E" opacity=".8"/>
-          <polygon points="-140,0 0,10 15,0 0,-10" fill="#C8A84B" opacity=".85"/>
-          <polygon points="140,0 0,10 -15,0 0,-10" fill="#C8A84B" opacity=".85"/>
-          <!-- Intercardinal arms -->
-          <polygon points="99,-99 7,7 0,14 -7,7" fill="#9A7A2E" opacity=".7"/>
-          <polygon points="99,99 -7,7 0,14 7,7" fill="#9A7A2E" opacity=".7" transform="rotate(90)"/>
-          <polygon points="99,-99 7,7 0,14 -7,7" fill="#9A7A2E" opacity=".7" transform="rotate(180)"/>
-          <polygon points="99,-99 7,7 0,14 -7,7" fill="#9A7A2E" opacity=".7" transform="rotate(270)"/>
+          <!-- Cardinal arms — identical prototype rotated 90° each, guarantees perfect symmetry -->
+          <polygon points="0,-140 9,0 0,14 -9,0" fill="#EDE6D8" opacity=".9"/>
+          <polygon points="0,-140 9,0 0,14 -9,0" fill="#8B6B1E" opacity=".8"  transform="rotate(180)"/>
+          <polygon points="0,-140 9,0 0,14 -9,0" fill="#C8A84B" opacity=".85" transform="rotate(90)"/>
+          <polygon points="0,-140 9,0 0,14 -9,0" fill="#C8A84B" opacity=".85" transform="rotate(270)"/>
+          <!-- Intercardinal arms — identical prototype rotated 45° increments -->
+          <polygon points="0,-105 6,0 0,9 -6,0" fill="#9A7A2E" opacity=".7" transform="rotate(45)"/>
+          <polygon points="0,-105 6,0 0,9 -6,0" fill="#9A7A2E" opacity=".7" transform="rotate(135)"/>
+          <polygon points="0,-105 6,0 0,9 -6,0" fill="#9A7A2E" opacity=".7" transform="rotate(225)"/>
+          <polygon points="0,-105 6,0 0,9 -6,0" fill="#9A7A2E" opacity=".7" transform="rotate(315)"/>
           <!-- Center -->
           <circle r="22" fill="#07101C" stroke="#C8A84B" stroke-width="1.2"/>
           <circle r="12" fill="#C8A84B"/>
@@ -1140,6 +1319,24 @@ document.querySelector('.hero')?.addEventListener('mousemove', e => {
 });
 document.querySelector('.hero')?.addEventListener('mouseleave', () => {
   if (heroContent) heroContent.style.transform = '';
+});
+
+// Mobile hamburger nav
+const ham = document.querySelector('.nav-ham');
+const navLinks = document.querySelector('.nav-links');
+ham?.addEventListener('click', () => {
+  const isOpen = navLinks?.classList.toggle('open');
+  ham.classList.toggle('active', isOpen);
+  ham.setAttribute('aria-expanded', String(!!isOpen));
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+navLinks?.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    ham?.classList.remove('active');
+    ham?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
 });
 </script>
 </body>
